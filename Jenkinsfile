@@ -9,8 +9,8 @@ pipeline {
       stage('Build') {
          steps{
             withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v1/') {
-              sh 'docker build -t welcome-github/testjenkin:v1 .'
-               sh 'docker push welcome-github/testjenkin:v1'
+              sh 'docker build -t testjenkin:v1 .'
+               sh 'docker push testjenkin:v1'
             }
          }
       }
