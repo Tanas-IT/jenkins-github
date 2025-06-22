@@ -8,9 +8,9 @@ pipeline {
       }
       stage('Build') {
          steps{
-            withDockerRegistry(credentialsId: 'docker-hub', url: 'https://hub.docker.com/') {
-              sh 'docker build -t tanas942/testjenkin .'
-               sh ' docker push tanas942/testjenkin'
+            withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v1/') {
+              sh 'docker build -t tanas942/testjenkin:0.0.1 .'
+               sh 'docker push tanas942/testjenkin:0.0.1'
             }
          }
       }
