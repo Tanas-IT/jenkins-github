@@ -3,7 +3,7 @@ pipeline {
    stages {
       stage('Clone') {
 	steps {
-	   git 'https://github.com/Tanas-IT/HairHub.git'
+	   git 'https://github.com/Tanas-IT/jenkins-github.git'
 	 }
       }
   }
