@@ -6,7 +6,7 @@ pipeline {
             git branch: 'main', url: 'https://github.com/Tanas-IT/jenkins-github.git'
          }
       }
-      stage('Build') {
+      stage('Docker Build') {
          steps{
             withDockerRegistry(credentialsId: 'user-docker') {
               sh 'docker build -t tanas942/testdeployjenkin:0.0.1 .'
