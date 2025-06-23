@@ -16,7 +16,7 @@ pipeline {
       // }
       stage('SSH server') {
          steps {
-            sshagent(['ssh-agent']) {
+            sshagent(['ssh-agent2']) {
                sh 'ssh -o StrictHostKeyChecking=no -l root 3.1.5.227 touch test1.txt'
             }
          }
