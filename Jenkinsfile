@@ -16,8 +16,8 @@ pipeline {
       // }
       stage('SSH server') {
          steps {
-            sshagent(['deploy-dev']) {
-               sh 'ssh -o StrictHostKeyChecking=no -l cloudbees 192.168.1.106 touch test.txt'
+            sshagent(['ssh-agent']) {
+               sh 'ssh -o StrictHostKeyChecking=no -l jenkins 192.168.1.106 touch test.txt'
             }
          }
       }
