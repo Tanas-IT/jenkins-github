@@ -20,4 +20,9 @@ pipeline {
          }
       }
    }
+   post {
+      always {
+         mail bcc: '', body: 'Hello World 123', cc: 'huynhphuoctan0206@gmail.com, tanhuynhphuoctan@gmail.com', from: '', replyTo: '', subject: 'Hello World', to: 'toannguyen67801@gmail.com'
+      }
+   }
 }
