@@ -16,9 +16,7 @@ pipeline {
       // }
       stage('SSH server') {
          steps {
-            sshagent(['ssh-agent2']) {
-               sh 'ssh -o StrictHostKeyChecking=no -l ubuntu 3.1.5.227 touch test1.txt'
-            }
+           sshPublisher(publishers: [sshPublisherDesc(configName: 'my-remote-server', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'cp index.html index-demo.html', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'index.html')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
          }
       }
    }
